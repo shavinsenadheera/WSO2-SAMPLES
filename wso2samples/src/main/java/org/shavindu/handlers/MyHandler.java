@@ -24,12 +24,12 @@ public class MyHandler extends AbstractHandler {
         Axis2MessageContext axis2MessageContext = (Axis2MessageContext) messageContext;
 
         // Create SecretResolver
-        SecretResolver secretResolver = ((XMLSecretResolver) axis2MessageContext.getConfiguration().getAxisConfiguration()
-                .getAxisConfiguration().getSecretResolver());
+        SecretResolver secretResolver = axis2MessageContext.getConfiguration().getAxisConfiguration()
+                .getAxisConfiguration().getSecretResolver();
 
         if (secretResolver != null && secretResolver.isInitialized()) {
             // Retrieve the secret using the alias
-            String secret = secretResolver.resolve("super_admin_password");
+            String secret = secretResolver.resolve(SECRET_ALIAS);
 
             // Use the secret as needed
             System.out.println("Resolved Password for super_admin_password = " + secret);
