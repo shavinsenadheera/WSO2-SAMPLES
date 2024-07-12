@@ -5,7 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.core.axis2.Axis2MessageContext;
 import org.apache.synapse.rest.AbstractHandler;
-import org.wso2.securevault.XMLSecretResolver;
 import org.wso2.securevault.secret.*;
 import org.wso2.securevault.SecretResolver;
 
