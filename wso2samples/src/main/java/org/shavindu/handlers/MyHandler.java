@@ -16,6 +16,7 @@ public class MyHandler extends AbstractHandler {
 
     private String myAliasForSuperAdmin;
 
+    // This method is written to try out to retrieve secrets resolves from the velocity template
     public void setMy_alias_for_super_admin(String myAliasForSuperAdmin) {
         this.myAliasForSuperAdmin = myAliasForSuperAdmin;
     }
