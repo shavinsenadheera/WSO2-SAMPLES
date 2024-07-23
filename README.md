@@ -36,10 +36,6 @@ You can simply define the sequence in an XML file to use a custom mediator in yo
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence xmlns="http://ws.apache.org/ns/synapse" name="SamplePolicy">
-    <class name="org.wso2.sample.synapse.handler.MyMediation"/>
+    <class name="org.shavindu.mediators.MyMediator"/>
 </sequence>
 ```
-</sequence>
-
-
-
