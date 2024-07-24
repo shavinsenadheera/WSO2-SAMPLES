@@ -12,7 +12,7 @@ To build this project and generate the JAR file, follow these steps:
 2. Navigate to the project directory.
 3. Run the build command (e.g., `mvn clean install` if using Maven).
 
-The resulting JAR file should be placed in the following location: <APIM_HOME>/repository/components/lib
+The resulting JAR file should be placed in the following location: <APIM_HOME>/repository/components/lib. Then, you need to restart the APIM server.
 
 ## Custom Handler
 
