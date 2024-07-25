@@ -1,11 +1,11 @@
 package org.shavindu.handlers;
 
+import org.apache.synapse.AbstractSynapseHandler;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.core.axis2.Axis2MessageContext;
-import org.apache.synapse.rest.AbstractHandler;
 import org.wso2.securevault.SecretResolver;
 
-public class MyHandler extends AbstractHandler {
+public class MyHandlerForMI extends AbstractSynapseHandler {
     private static final String SECRET_ALIAS = "secret_1";
 
     public void processSecurity(MessageContext messageContext) {
@@ -28,7 +28,7 @@ public class MyHandler extends AbstractHandler {
     }
 
     @Override
-    public boolean handleRequest(MessageContext messageContext) {
+    public boolean handleRequestInFlow(MessageContext messageContext) {
         System.out.println("I am in the handleRequest flow.");
         // Trying to resolve the secure vault alias from the Java Code
         System.out.println("Trying to resolve the secure vault alias from the Java Code");
@@ -37,8 +37,17 @@ public class MyHandler extends AbstractHandler {
     }
 
     @Override
-    public boolean handleResponse(MessageContext messageContext) {
-        System.out.println("I am in the handleResponse flow.");
-        return true;
+    public boolean handleRequestOutFlow(MessageContext messageContext) {
+        return false;
+    }
+
+    @Override
+    public boolean handleResponseInFlow(MessageContext messageContext) {
+        return false;
+    }
+
+    @Override
+    public boolean handleResponseOutFlow(MessageContext messageContext) {
+        return false;
     }
 }
